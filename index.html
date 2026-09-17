@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0c1323" />
+  <title>TRENDOVA — Predictive Customer Intelligence</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div id="toast"></div>
+  <section id="authView" class="auth-shell">
+    <div class="auth-card glass">
+      <div class="brand-lockup">
+        <div class="brand-mark">T</div>
+        <div><div class="brand-name">TRENDOVA</div><div class="brand-tag">Predictive Customer Intelligence</div></div>
+      </div>
+      <div class="eyebrow">AI + BIG DATA FOR F&B SMEs</div>
+      <h1>See the signal<br><span>before it becomes a trend.</span></h1>
+      <p class="muted">Deteksi tren, validasi lintas sumber, lalu ubah sinyal konsumen menjadi eksperimen bisnis yang terukur.</p>
+      <div class="auth-tabs"><button id="loginTab" class="auth-tab active" type="button">Login</button><button id="registerTab" class="auth-tab" type="button">Buat akun</button></div>
+      <form id="loginForm" class="stack">
+        <label>Email<input id="email" type="email" value="demo@trendova.id" required /></label>
+        <label>Password<input id="password" type="password" value="trendova123" required /></label>
+        <button class="primary" type="submit">Masuk ke Demo</button>
+      </form>
+      <form id="registerForm" class="stack hidden">
+        <label>Nama<input id="regName" required placeholder="Nama kamu" /></label>
+        <label>Email<input id="regEmail" type="email" required placeholder="nama@email.com" /></label>
+        <label>Password<input id="regPassword" type="password" minlength="8" required placeholder="Min. 8 karakter" /></label>
+        <label>Nama Bisnis<input id="regBusiness" required placeholder="Nama UMKM F&B" /></label>
+        <label>Kota<input id="regCity" value="Yogyakarta" required /></label>
+        <button class="primary" type="submit">Buat Workspace</button>
+      </form>
+      <div class="demo-hint">Demo cepat: <b>demo@trendova.id</b> / <b>trendova123</b> · Untuk workspace pribadi, pilih <b>Buat akun</b>.</div>
+      <div class="auth-foot">Built for sustainable, adaptive F&B decisions.</div>
+    </div>
+  </section>
+
+  <section id="appView" class="app-shell hidden">
+    <aside class="sidebar glass">
+      <div class="brand-lockup side-brand"><div class="brand-mark">T</div><div><div class="brand-name">TRENDOVA</div><div class="brand-tag">Predictive Intelligence</div></div></div>
+      <nav>
+        <button class="nav active" data-view="dashboard">Overview</button>
+        <button class="nav" data-view="trends">Trend Radar</button>
+        <button class="nav" data-view="sales">Sales Data</button>
+        <button class="nav" data-view="recommendations">AI Recommendations</button>
+        <button class="nav" data-view="experiments">Experiments</button>
+        <button class="nav" data-view="profile">Business Profile</button>
+      </nav>
+      <div class="side-bottom">
+        <div class="signal-legend"><span class="dot live"></span> Intelligence engine live</div>
+        <button id="logoutBtn" class="ghost full">Logout</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><div class="eyebrow" id="sectionEyebrow">COMMAND CENTER</div><h2 id="pageTitle">Overview</h2></div>
+        <div class="user-chip"><div class="avatar" id="avatar">DO</div><div><b id="userName">Demo Owner</b><span id="businessName">Kimpul & Co. F&B</span></div></div>
+      </header>
+
+      <section id="dashboard" class="view">
+        <div class="hero glass">
+          <div><div class="eyebrow">TODAY'S SIGNAL</div><h3 id="heroTitle">Loading...</h3><p id="heroText" class="muted"></p></div>
+          <div class="score-ring"><span id="heroScore">--</span><small>signal score</small></div>
+        </div>
+        <div class="kpi-grid">
+          <div class="kpi glass"><span>Emerging Opportunities</span><b id="kpiOpp">—</b><small>needs validation</small></div>
+          <div class="kpi glass"><span>Open Recommendations</span><b id="kpiRec">—</b><small>AI → owner actions</small></div>
+          <div class="kpi glass"><span>30D Revenue</span><b id="kpiRevenue">—</b><small>internal sales data</small></div>
+          <div class="kpi glass"><span>30D Units</span><b id="kpiUnits">—</b><small>recent activity</small></div>
+        </div>
+        <div class="grid-2">
+          <div class="panel glass"><div class="panel-head"><div><h3>Top Trend Signals</h3><span class="muted">cross-source confirmation</span></div><button class="text-btn" data-view-jump="trends">Open radar →</button></div><div id="trendList" class="list"></div></div>
+          <div class="panel glass"><div class="panel-head"><div><h3>Decision Loop</h3><span class="muted">TRENDOVA does not auto-decide</span></div></div>
+            <div class="loop"><div><strong>01</strong><span>Observe</span><small>social, search, news, sales</small></div><div><strong>02</strong><span>Validate</span><small>growth + sentiment + persistence</small></div><div><strong>03</strong><span>Score</span><small>rank emerging opportunity</small></div><div><strong>04</strong><span>Act</span><small>limited product experiment</small></div></div>
+          </div>
+        </div>
+        <div class="sustainability glass">
+          <div><div class="eyebrow">SUSTAINABLE BUSINESS LENS</div><h3>Make better decisions before scaling.</h3><p class="muted">TRENDOVA treats sustainability as a long-term business capability: adaptive decisions, lower guesswork, and responsible experimentation.</p></div>
+          <div class="sustain-grid"><div><b>Adaptive</b><span>Respond to validated demand signals.</span></div><div><b>Resource-aware</b><span>Test small before committing larger inputs.</span></div><div><b>Inclusive</b><span>Give SMEs access to structured customer intelligence.</span></div></div>
+        </div>
+      </section>
+
+      <section id="trends" class="view hidden">
+        <div class="section-card glass"><div><div class="eyebrow">TREND RADAR</div><h3>Emerging signals, not viral noise.</h3><p class="muted">Score combines growth, cross-source confirmation, sentiment, persistence, and internal sales momentum.</p></div><form id="analyzeForm" class="inline-form"><input id="trendKeyword" placeholder="e.g. taro, pistachio, kimpul"/><label class="check"><input type="checkbox" value="Social Media" checked> Social</label><label class="check"><input type="checkbox" value="Search" checked> Search</label><label class="check"><input type="checkbox" value="News"> News</label><button class="primary" type="submit">Analyze Signal</button></form></div>
+        <div id="trendTable" class="table-wrap glass"></div>
+      </section>
+
+      <section id="sales" class="view hidden">
+        <div class="section-card glass"><div><div class="eyebrow">INTERNAL DATA</div><h3>Sales history as the reality check.</h3><p class="muted">External buzz only becomes useful when it can be tested against your own business context.</p></div><button class="primary" id="showSaleForm">Add Sales</button></div>
+        <div id="saleFormWrap" class="form-panel glass hidden"><form id="saleForm" class="grid-form"><label>Product<select id="saleProduct"></select></label><label>Date<input id="saleDate" type="date" required></label><label>Units<input id="saleUnits" type="number" min="1" value="10" required></label><label>Revenue (IDR)<input id="saleRevenue" type="number" min="0" required></label><button class="primary" type="submit">Save Sales</button></form></div>
+        <div id="salesTable" class="table-wrap glass"></div>
+      </section>
+
+      <section id="recommendations" class="view hidden"><div class="section-card glass"><div><div class="eyebrow">AI → ACTION</div><h3>Recommended next moves.</h3><p class="muted">Every recommendation is framed as a decision aid for the owner.</p></div></div><div id="recGrid" class="rec-grid"></div></section>
+
+      <section id="experiments" class="view hidden"><div class="section-card glass"><div><div class="eyebrow">VALIDATION LAB</div><h3>Turn a signal into a controlled experiment.</h3><p class="muted">Test small before scaling. Log the hypothesis, budget, and target units.</p></div><button class="primary" id="showExpForm">Create Experiment</button></div>
+        <div id="expFormWrap" class="form-panel glass hidden"><form id="expForm" class="grid-form"><label>Trend<select id="expTrend"></select></label><label>Product Name<input id="expProduct" placeholder="e.g. Kimpul Cream Puff" required></label><label>Hypothesis<textarea id="expHypothesis" placeholder="Jika tren ini valid, maka..." required></textarea></label><label>Budget (IDR)<input id="expBudget" type="number" value="500000" min="0"></label><label>Test Days<input id="expDays" type="number" value="7" min="1"></label><label>Target Units<input id="expTarget" type="number" value="50" min="1"></label><button class="primary" type="submit">Save Experiment</button></form></div>
+        <div id="expList" class="exp-list"></div>
+      </section>
+
+      <section id="profile" class="view hidden"><div class="section-card glass"><div><div class="eyebrow">BUSINESS PROFILE</div><h3>Context matters.</h3><p class="muted">TRENDOVA tailors signal interpretation to the SME's actual business.</p></div></div><div class="profile-panel glass"><form id="profileForm" class="grid-form"><label>Business Name<input id="profileName" required></label><label>City<input id="profileCity" required></label><label>Sector<input value="Food & Beverage" disabled></label><label>Account Email<input id="profileEmail" disabled></label><button class="primary" type="submit">Save Profile</button></form></div></section>
+    </main>
+  </section>
+  <script src="/app.js"></script>
+</body>
+</html>
